@@ -366,8 +366,13 @@ button {
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+}
+
+/* Center the sauna card on second row */
+.tech-card-centered {
+    grid-column: 2 / 4;
 }
 
 .tech-card {
@@ -1055,6 +1060,14 @@ button {
         flex-direction: column;
         text-align: center;
     }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tech-card-centered {
+        grid-column: 1 / 3;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1073,6 +1086,10 @@ button {
 
     .tech-grid {
         grid-template-columns: 1fr;
+    }
+
+    .tech-card-centered {
+        grid-column: 1;
     }
 
     .blog-grid {

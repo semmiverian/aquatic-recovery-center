@@ -265,6 +265,11 @@ if (heroVideo) {
     heroVideo.setAttribute('playsinline', '');
     heroVideo.setAttribute('webkit-playsinline', '');
 
+    // Ensure seamless looping
+    heroVideo.loop = true;
+    heroVideo.muted = true;
+    heroVideo.autoplay = true;
+
     // Play video when loaded
     heroVideo.addEventListener('loadeddata', () => {
         heroVideo.play().catch(error => {
@@ -276,16 +281,26 @@ if (heroVideo) {
         });
     });
 
-    // Pause video when out of viewport to save resources
+    // Ensure video loops seamlessly without interruption
+    heroVideo.addEventListener('ended', () => {
+        heroVideo.currentTime = 0;
+        heroVideo.play();
+    });
+
+    // Handle video errors
+    heroVideo.addEventListener('error', (e) => {
+        console.log('Video error:', e);
+    });
+
+    // Keep video playing when in viewport (hero section)
     const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                heroVideo.play();
-            } else {
-                heroVideo.pause();
+                heroVideo.play().catch(err => console.log('Play error:', err));
             }
+            // Don't pause hero video even when out of viewport
         });
-    }, { threshold: 0.25 });
+    }, { threshold: 0.1 });
 
     videoObserver.observe(heroVideo);
 }
