@@ -273,6 +273,24 @@ if (heroVideo) {
 
     // Check if video has actual content
     let videoHasContent = false;
+    let videoDuration = 0;
+
+    // Monitor video playback for debugging
+    heroVideo.addEventListener('loadedmetadata', () => {
+        videoDuration = heroVideo.duration;
+        console.log('✅ Video loaded - Duration:', videoDuration.toFixed(2), 'seconds');
+        console.log('Video dimensions:', heroVideo.videoWidth, 'x', heroVideo.videoHeight);
+    });
+
+    // Track playback progress
+    let lastLoggedSecond = -1;
+    heroVideo.addEventListener('timeupdate', () => {
+        const currentSecond = Math.floor(heroVideo.currentTime);
+        if (currentSecond !== lastLoggedSecond) {
+            console.log('▶️ Video playback:', currentSecond + 1, '/', Math.ceil(videoDuration), 'seconds');
+            lastLoggedSecond = currentSecond;
+        }
+    });
 
     // Play video when loaded
     heroVideo.addEventListener('loadeddata', () => {
@@ -284,10 +302,12 @@ if (heroVideo) {
                 videoFallback.style.display = 'none';
             }
 
+            console.log('🎬 Starting video playback...');
             heroVideo.play().catch(error => {
-                console.log('Video autoplay failed:', error);
+                console.log('❌ Video autoplay failed:', error);
                 // Fallback: try to play on user interaction
                 document.addEventListener('click', () => {
+                    console.log('🖱️ Playing video on user click');
                     heroVideo.play();
                 }, { once: true });
             });
@@ -297,21 +317,39 @@ if (heroVideo) {
             if (videoFallback) {
                 videoFallback.style.display = 'block';
             }
-            console.log('Video file is empty or invalid. Using gradient background.');
+            console.log('⚠️ Video file is empty or invalid. Using gradient background.');
         }
     });
 
-    // Ensure video loops seamlessly without interruption
+    // Monitor when video naturally loops (for debugging)
     heroVideo.addEventListener('ended', () => {
-        if (videoHasContent) {
-            heroVideo.currentTime = 0;
-            heroVideo.play();
-        }
+        console.log('🔄 Video ended, browser will loop (duration was:', videoDuration.toFixed(2), 'seconds)');
+        // Note: We don't manually restart since loop=true handles this
+        // The browser's native loop should handle seamless looping
+    });
+
+    // Monitor when video plays
+    heroVideo.addEventListener('play', () => {
+        console.log('▶️ Video playing');
+    });
+
+    // Monitor when video pauses
+    heroVideo.addEventListener('pause', () => {
+        console.log('⏸️ Video paused at', heroVideo.currentTime.toFixed(2), 'seconds');
+    });
+
+    // Monitor seeking
+    heroVideo.addEventListener('seeking', () => {
+        console.log('⏩ Video seeking to', heroVideo.currentTime.toFixed(2), 'seconds');
+    });
+
+    heroVideo.addEventListener('seeked', () => {
+        console.log('✅ Video seeked to', heroVideo.currentTime.toFixed(2), 'seconds');
     });
 
     // Handle video errors - show fallback
     heroVideo.addEventListener('error', (e) => {
-        console.log('Video error - using fallback background:', e);
+        console.log('❌ Video error - using fallback background:', e);
         heroVideo.style.display = 'none';
         if (videoFallback) {
             videoFallback.style.display = 'block';
@@ -325,7 +363,7 @@ if (heroVideo) {
             if (videoFallback) {
                 videoFallback.style.display = 'block';
             }
-            console.log('Video did not load properly. Using animated gradient background.');
+            console.log('⏱️ Video did not load properly. Using animated gradient background.');
         }
     }, 2000);
 
@@ -333,13 +371,19 @@ if (heroVideo) {
     const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && videoHasContent) {
-                heroVideo.play().catch(err => console.log('Play error:', err));
+                if (heroVideo.paused) {
+                    console.log('👁️ Video in viewport, resuming playback');
+                    heroVideo.play().catch(err => console.log('Play error:', err));
+                }
             }
             // Don't pause hero video even when out of viewport
         });
     }, { threshold: 0.1 });
 
     videoObserver.observe(heroVideo);
+
+    // Log final setup
+    console.log('🎥 Video element configured with loop=true, autoplay=true, muted=true');
 }
 
 // ===================================
