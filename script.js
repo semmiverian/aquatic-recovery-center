@@ -259,6 +259,7 @@ document.head.appendChild(style);
 // Hero Video Optimization
 // ===================================
 const heroVideo = document.querySelector('.hero-video');
+const videoFallback = document.querySelector('.hero-video-fallback');
 
 if (heroVideo) {
     // Ensure video plays on mobile devices
@@ -270,32 +271,68 @@ if (heroVideo) {
     heroVideo.muted = true;
     heroVideo.autoplay = true;
 
+    // Check if video has actual content
+    let videoHasContent = false;
+
     // Play video when loaded
     heroVideo.addEventListener('loadeddata', () => {
-        heroVideo.play().catch(error => {
-            console.log('Video autoplay failed:', error);
-            // Fallback: try to play on user interaction
-            document.addEventListener('click', () => {
-                heroVideo.play();
-            }, { once: true });
-        });
+        // Check if video has actual duration (not empty/corrupted)
+        if (heroVideo.duration && heroVideo.duration > 0 && heroVideo.duration !== Infinity) {
+            videoHasContent = true;
+            heroVideo.style.display = 'block';
+            if (videoFallback) {
+                videoFallback.style.display = 'none';
+            }
+
+            heroVideo.play().catch(error => {
+                console.log('Video autoplay failed:', error);
+                // Fallback: try to play on user interaction
+                document.addEventListener('click', () => {
+                    heroVideo.play();
+                }, { once: true });
+            });
+        } else {
+            // Video is empty or invalid, hide it and show fallback
+            heroVideo.style.display = 'none';
+            if (videoFallback) {
+                videoFallback.style.display = 'block';
+            }
+            console.log('Video file is empty or invalid. Using gradient background.');
+        }
     });
 
     // Ensure video loops seamlessly without interruption
     heroVideo.addEventListener('ended', () => {
-        heroVideo.currentTime = 0;
-        heroVideo.play();
+        if (videoHasContent) {
+            heroVideo.currentTime = 0;
+            heroVideo.play();
+        }
     });
 
-    // Handle video errors
+    // Handle video errors - show fallback
     heroVideo.addEventListener('error', (e) => {
-        console.log('Video error:', e);
+        console.log('Video error - using fallback background:', e);
+        heroVideo.style.display = 'none';
+        if (videoFallback) {
+            videoFallback.style.display = 'block';
+        }
     });
+
+    // Timeout to check if video loaded - if not, show fallback
+    setTimeout(() => {
+        if (!videoHasContent) {
+            heroVideo.style.display = 'none';
+            if (videoFallback) {
+                videoFallback.style.display = 'block';
+            }
+            console.log('Video did not load properly. Using animated gradient background.');
+        }
+    }, 2000);
 
     // Keep video playing when in viewport (hero section)
     const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && videoHasContent) {
                 heroVideo.play().catch(err => console.log('Play error:', err));
             }
             // Don't pause hero video even when out of viewport

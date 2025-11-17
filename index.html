@@ -39,10 +39,11 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-video-container">
-            <video autoplay muted loop playsinline class="hero-video">
+            <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
                 <source src="promotional_video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            <div class="hero-video-fallback"></div>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -179,7 +180,7 @@
                 </div>
 
                 <!-- Sauna -->
-                <div class="tech-card tech-card-centered" data-aos="fade-up" data-aos-delay="400">
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="tech-icon">
                         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <rect x="15" y="25" width="70" height="55" rx="8" fill="#FF6B6B" opacity="0.2"/>
