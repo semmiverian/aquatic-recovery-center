@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aquatic Recovery Center - Where water heals. Experience cutting-edge aquatic therapy with state-of-the-art equipment for your recovery and wellness journey.">
+    <meta name="keywords" content="aquatic therapy, underwater treadmill, recovery center, hydrotherapy, wellness, rehabilitation">
+    <title>Aquatic Recovery Center - Where Water Heals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#home" class="logo-link">
+                    <img src="logo.png" alt="Aquatic Recovery Center Logo" class="nav-logo">
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#technology" class="nav-link">Technology</a></li>
+                    <li><a href="#bistro" class="nav-link">Bistro</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                    <li><a href="#schedule" class="nav-link">Schedule</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="promotional_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 class="hero-title">Where Water Heals</h1>
+                    <p class="hero-subtitle">Experience Revolutionary Aquatic Therapy</p>
+                    <p class="hero-description">
+                        Discover the transformative power of water-based rehabilitation and wellness.
+                        Our state-of-the-art aquatic recovery center combines cutting-edge technology
+                        with expert care to accelerate your healing journey and enhance your well-being.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#schedule" class="btn btn-primary">Book Your Session</a>
+                        <a href="#technology" class="btn btn-secondary">Explore Our Technology</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="technology">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">State-of-the-Art Technology</h2>
+                <p class="section-subtitle">Advanced equipment designed for optimal recovery and performance</p>
+            </div>
+            <div class="tech-grid">
+                <!-- Static Swimming Pool -->
+                <div class="tech-card" data-aos="fade-up">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="40" width="80" height="40" rx="5" fill="#0066B3" opacity="0.3"/>
+                            <path d="M15 50 Q25 45, 35 50 T55 50 T75 50 T90 50" stroke="#0066B3" stroke-width="2" fill="none"/>
+                            <path d="M15 60 Q25 55, 35 60 T55 60 T75 60 T90 60" stroke="#0066B3" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="30" r="8" fill="#7FB539"/>
+                            <path d="M30 38 L25 48 L30 45 L35 48 Z" fill="#7FB539"/>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">Static Swimming Pool</h3>
+                    <p class="tech-description">
+                        Swim in place against adjustable current resistance. Perfect for cardiovascular training,
+                        endurance building, and low-impact full-body workouts. The controlled environment allows
+                        for precise monitoring and progressive resistance training.
+                    </p>
+                    <ul class="tech-features">
+                        <li>Adjustable current speeds</li>
+                        <li>Temperature-controlled water</li>
+                        <li>Perfect for all fitness levels</li>
+                        <li>Reduces joint stress by 90%</li>
+                    </ul>
+                </div>
+
+                <!-- Underwater Treadmill -->
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="30" width="60" height="50" rx="3" fill="#0066B3" opacity="0.2"/>
+                            <rect x="25" y="60" width="50" height="3" fill="#7FB539"/>
+                            <line x1="30" y1="60" x2="70" y2="60" stroke="#333" stroke-width="1" stroke-dasharray="5,5"/>
+                            <circle cx="50" cy="25" r="6" fill="#7FB539"/>
+                            <path d="M50 31 L50 45 M50 38 L45 42 M50 38 L55 42" stroke="#7FB539" stroke-width="2"/>
+                            <path d="M20 75 Q30 70, 40 75 T60 75 T80 75" stroke="#0066B3" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">Underwater Treadmill</h3>
+                    <p class="tech-description">
+                        Revolutionary rehabilitation tool that combines the benefits of walking with water resistance.
+                        Ideal for injury recovery, post-surgery rehabilitation, and gait training. The buoyancy of
+                        water reduces body weight while providing natural resistance.
+                    </p>
+                    <ul class="tech-features">
+                        <li>Variable water depth control</li>
+                        <li>Adjustable speed settings</li>
+                        <li>Real-time gait analysis</li>
+                        <li>Accelerates recovery time</li>
+                    </ul>
+                </div>
+
+                <!-- Underwater Bike -->
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="15" y="35" width="70" height="45" rx="5" fill="#0066B3" opacity="0.2"/>
+                            <circle cx="35" cy="60" r="12" fill="none" stroke="#7FB539" stroke-width="2"/>
+                            <circle cx="65" cy="60" r="12" fill="none" stroke="#7FB539" stroke-width="2"/>
+                            <path d="M35 48 L50 35 L65 48" stroke="#333" stroke-width="2" fill="none"/>
+                            <line x1="50" y1="35" x2="50" y2="55" stroke="#333" stroke-width="2"/>
+                            <path d="M15 70 Q25 65, 35 70 T55 70 T75 70" stroke="#0066B3" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">Underwater Bike</h3>
+                    <p class="tech-description">
+                        Aquatic cycling that provides exceptional cardiovascular benefits with minimal joint impact.
+                        The water resistance creates an intensive workout while protecting your joints. Perfect for
+                        athletes, seniors, and anyone seeking effective low-impact exercise.
+                    </p>
+                    <ul class="tech-features">
+                        <li>Adjustable resistance levels</li>
+                        <li>Ergonomic design</li>
+                        <li>Burns calories efficiently</li>
+                        <li>Improves muscle tone</li>
+                    </ul>
+                </div>
+
+                <!-- Hot & Cold Pool -->
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="40" width="35" height="40" rx="3" fill="#FF6B6B" opacity="0.3"/>
+                            <rect x="55" y="40" width="35" height="40" rx="3" fill="#4ECDC4" opacity="0.3"/>
+                            <path d="M15 55 Q20 52, 25 55 T35 55" stroke="#FF6B6B" stroke-width="2" fill="none"/>
+                            <path d="M60 55 Q65 52, 70 55 T80 55" stroke="#4ECDC4" stroke-width="2" fill="none"/>
+                            <text x="27" y="33" font-size="18" fill="#FF6B6B" text-anchor="middle">♨</text>
+                            <text x="72" y="33" font-size="18" fill="#4ECDC4" text-anchor="middle">❄</text>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">Hot & Cold Pool</h3>
+                    <p class="tech-description">
+                        Experience contrast therapy with our dual-temperature pools. Alternating between hot and cold
+                        water stimulates circulation, reduces inflammation, speeds recovery, and promotes overall wellness.
+                        Used by professional athletes and wellness enthusiasts worldwide.
+                    </p>
+                    <ul class="tech-features">
+                        <li>Precise temperature control</li>
+                        <li>Reduces muscle soreness</li>
+                        <li>Boosts immune system</li>
+                        <li>Enhances mental clarity</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bistro Section -->
+    <section id="bistro" class="bistro">
+        <div class="container">
+            <div class="bistro-content">
+                <div class="bistro-text" data-aos="fade-right">
+                    <h2 class="section-title">Healthy Bistro</h2>
+                    <p class="bistro-intro">
+                        Nourish your body after your aquatic therapy session with our carefully curated healthy bistro menu.
+                    </p>
+                    <p class="bistro-description">
+                        Recovery isn't just about physical therapy—it's about complete wellness. Our on-site healthy bistro
+                        offers nutritious, delicious meals designed to complement your recovery journey. Every dish is
+                        crafted with fresh, locally-sourced ingredients to fuel your body's healing process.
+                    </p>
+                    <div class="bistro-features">
+                        <div class="bistro-feature">
+                            <div class="bistro-feature-icon">🥗</div>
+                            <div>
+                                <h4>Fresh & Organic</h4>
+                                <p>Locally sourced ingredients, prepared daily</p>
+                            </div>
+                        </div>
+                        <div class="bistro-feature">
+                            <div class="bistro-feature-icon">💪</div>
+                            <div>
+                                <h4>Recovery-Focused</h4>
+                                <p>Protein-rich meals to support muscle recovery</p>
+                            </div>
+                        </div>
+                        <div class="bistro-feature">
+                            <div class="bistro-feature-icon">🌱</div>
+                            <div>
+                                <h4>Dietary Options</h4>
+                                <p>Vegan, vegetarian, gluten-free, and keto options</p>
+                            </div>
+                        </div>
+                        <div class="bistro-feature">
+                            <div class="bistro-feature-icon">🥤</div>
+                            <div>
+                                <h4>Fresh Juices & Smoothies</h4>
+                                <p>Nutrient-packed beverages for optimal hydration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bistro-menu" data-aos="fade-left">
+                    <div class="menu-card">
+                        <h3>Sample Menu Highlights</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <h4>Recovery Bowl</h4>
+                                <p>Quinoa, grilled salmon, avocado, mixed greens, and turmeric dressing</p>
+                            </div>
+                            <div class="menu-item">
+                                <h4>Green Vitality Smoothie</h4>
+                                <p>Spinach, banana, mango, chia seeds, and coconut water</p>
+                            </div>
+                            <div class="menu-item">
+                                <h4>Protein Power Wrap</h4>
+                                <p>Grilled chicken, hummus, vegetables, and whole wheat tortilla</p>
+                            </div>
+                            <div class="menu-item">
+                                <h4>Antioxidant Salad</h4>
+                                <p>Mixed berries, walnuts, goat cheese, and balsamic glaze</p>
+                            </div>
+                        </div>
+                        <a href="#schedule" class="btn btn-primary">Reserve Your Meal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Insights</h2>
+                <p class="section-subtitle">Expert advice and stories from our aquatic therapy community</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card" data-aos="fade-up">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder" style="background: linear-gradient(135deg, #0066B3 0%, #7FB539 100%);">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <text x="100" y="100" font-size="60" fill="white" text-anchor="middle" dominant-baseline="middle">💧</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Recovery</span>
+                        <h3 class="blog-title">The Science Behind Aquatic Therapy</h3>
+                        <p class="blog-excerpt">
+                            Discover how water's unique properties—buoyancy, resistance, and hydrostatic pressure—work
+                            together to accelerate healing and reduce recovery time by up to 40%.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date">November 15, 2025</span>
+                            <span class="blog-read-time">5 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder" style="background: linear-gradient(135deg, #7FB539 0%, #0066B3 100%);">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <text x="100" y="100" font-size="60" fill="white" text-anchor="middle" dominant-baseline="middle">🏊</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Success Stories</span>
+                        <h3 class="blog-title">From Injury to Ironman: Sarah's Journey</h3>
+                        <p class="blog-excerpt">
+                            Read how Sarah overcame a severe knee injury using our underwater treadmill and static pool,
+                            completing her first Ironman triathlon just 8 months after surgery.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date">November 12, 2025</span>
+                            <span class="blog-read-time">7 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder" style="background: linear-gradient(135deg, #0066B3 0%, #4ECDC4 100%);">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <text x="100" y="100" font-size="60" fill="white" text-anchor="middle" dominant-baseline="middle">🧘</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Wellness</span>
+                        <h3 class="blog-title">The Benefits of Contrast Therapy</h3>
+                        <p class="blog-excerpt">
+                            Learn why elite athletes swear by hot and cold therapy, and how you can incorporate this
+                            powerful recovery technique into your wellness routine.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date">November 10, 2025</span>
+                            <span class="blog-read-time">6 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image">
+                        <div class="blog-image-placeholder" style="background: linear-gradient(135deg, #7FB539 0%, #4ECDC4 100%);">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <text x="100" y="100" font-size="60" fill="white" text-anchor="middle" dominant-baseline="middle">🥗</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category">Nutrition</span>
+                        <h3 class="blog-title">Nutrition for Optimal Recovery</h3>
+                        <p class="blog-excerpt">
+                            Our nutritionist shares the top 10 foods that enhance recovery, reduce inflammation,
+                            and support your aquatic therapy results.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date">November 8, 2025</span>
+                            <span class="blog-read-time">4 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Session Schedule</h2>
+                <p class="section-subtitle">Book your preferred time slot for an optimal recovery experience</p>
+            </div>
+            <div class="schedule-content">
+                <div class="schedule-info" data-aos="fade-right">
+                    <h3>Flexible Sessions for Your Lifestyle</h3>
+                    <p>
+                        We offer convenient scheduling throughout the week to fit your busy lifestyle. Each session
+                        is tailored to your specific needs with expert guidance from our certified therapists.
+                    </p>
+                    <div class="schedule-highlights">
+                        <div class="schedule-highlight">
+                            <strong>⏱️ Session Duration:</strong> 45-60 minutes
+                        </div>
+                        <div class="schedule-highlight">
+                            <strong>👥 Group & Private:</strong> Options available
+                        </div>
+                        <div class="schedule-highlight">
+                            <strong>🎯 Personalized:</strong> Customized therapy plans
+                        </div>
+                        <div class="schedule-highlight">
+                            <strong>📱 Easy Booking:</strong> Online or phone reservations
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-table-container" data-aos="fade-left">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Monday - Friday</th>
+                                <th>Saturday - Sunday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>6:00 AM - 8:00 AM</td>
+                                <td><span class="session-tag available">Early Bird Sessions</span></td>
+                                <td><span class="session-tag available">Weekend Wellness</span></td>
+                            </tr>
+                            <tr>
+                                <td>8:00 AM - 10:00 AM</td>
+                                <td><span class="session-tag available">Morning Recovery</span></td>
+                                <td><span class="session-tag available">Morning Recovery</span></td>
+                            </tr>
+                            <tr>
+                                <td>10:00 AM - 12:00 PM</td>
+                                <td><span class="session-tag available">Mid-Morning Sessions</span></td>
+                                <td><span class="session-tag popular">Popular Time</span></td>
+                            </tr>
+                            <tr>
+                                <td>12:00 PM - 2:00 PM</td>
+                                <td><span class="session-tag available">Lunch Break Special</span></td>
+                                <td><span class="session-tag available">Afternoon Sessions</span></td>
+                            </tr>
+                            <tr>
+                                <td>2:00 PM - 4:00 PM</td>
+                                <td><span class="session-tag available">Afternoon Recovery</span></td>
+                                <td><span class="session-tag available">Afternoon Recovery</span></td>
+                            </tr>
+                            <tr>
+                                <td>4:00 PM - 6:00 PM</td>
+                                <td><span class="session-tag popular">After Work Rush</span></td>
+                                <td><span class="session-tag available">Evening Sessions</span></td>
+                            </tr>
+                            <tr>
+                                <td>6:00 PM - 8:00 PM</td>
+                                <td><span class="session-tag available">Evening Sessions</span></td>
+                                <td><span class="session-tag limited">Limited Slots</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="schedule-legend">
+                        <span class="legend-item"><span class="session-tag available"></span> Available</span>
+                        <span class="legend-item"><span class="session-tag popular"></span> Popular</span>
+                        <span class="legend-item"><span class="session-tag limited"></span> Limited</span>
+                    </div>
+                </div>
+            </div>
+            <div class="booking-cta" data-aos="fade-up">
+                <h3>Ready to Start Your Recovery Journey?</h3>
+                <p>Book your first session today and experience the transformative power of aquatic therapy</p>
+                <div class="booking-buttons">
+                    <a href="tel:+1234567890" class="btn btn-primary btn-large">📞 Call to Book: (123) 456-7890</a>
+                    <a href="mailto:info@aquaticrecoverycenter.com" class="btn btn-secondary btn-large">✉️ Email Us</a>
+                </div>
+                <p class="booking-note">First-time visitors receive a complimentary consultation and facility tour!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section" data-aos="fade-up">
+                    <img src="logo.png" alt="Aquatic Recovery Center" class="footer-logo">
+                    <p class="footer-tagline">Where Water Heals</p>
+                    <p class="footer-description">
+                        Transform your recovery journey with cutting-edge aquatic therapy.
+                        Your path to wellness starts here.
+                    </p>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#technology">Our Technology</a></li>
+                        <li><a href="#bistro">Healthy Bistro</a></li>
+                        <li><a href="#blog">Blog & Insights</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>📍 123 Wellness Boulevard<br>Recovery City, RC 12345</li>
+                        <li>📞 (123) 456-7890</li>
+                        <li>✉️ info@aquaticrecoverycenter.com</li>
+                        <li>🕐 Mon-Fri: 6AM - 8PM<br>Sat-Sun: 8AM - 6PM</li>
+                    </ul>
+                </div>
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Newsletter</h4>
+                        <p>Stay updated with our latest wellness tips</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aquatic Recovery Center. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#terms">Terms of Service</a>
+                    <span>|</span>
+                    <a href="#accessibility">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
