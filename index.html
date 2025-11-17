@@ -39,10 +39,11 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-video-container">
-            <video autoplay muted loop playsinline class="hero-video">
+            <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
                 <source src="promotional_video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            <div class="hero-video-fallback"></div>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -175,6 +176,45 @@
                         <li>Reduces muscle soreness</li>
                         <li>Boosts immune system</li>
                         <li>Enhances mental clarity</li>
+                    </ul>
+                </div>
+
+                <!-- Sauna -->
+                <div class="tech-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="15" y="25" width="70" height="55" rx="8" fill="#FF6B6B" opacity="0.2"/>
+                            <rect x="20" y="30" width="60" height="45" rx="5" fill="#FF6B6B" opacity="0.15"/>
+                            <!-- Wooden panels effect -->
+                            <line x1="25" y1="35" x2="75" y2="35" stroke="#8B4513" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="25" y1="45" x2="75" y2="45" stroke="#8B4513" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="25" y1="55" x2="75" y2="55" stroke="#8B4513" stroke-width="1.5" opacity="0.4"/>
+                            <line x1="25" y1="65" x2="75" y2="65" stroke="#8B4513" stroke-width="1.5" opacity="0.4"/>
+                            <!-- Heat waves -->
+                            <path d="M35 15 Q35 10, 35 8" stroke="#FF6B6B" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <path d="M50 12 Q50 7, 50 5" stroke="#FF6B6B" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <path d="M65 15 Q65 10, 65 8" stroke="#FF6B6B" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <!-- Sauna rocks/heater -->
+                            <circle cx="50" cy="60" r="8" fill="#8B4513" opacity="0.6"/>
+                            <circle cx="45" cy="56" r="5" fill="#8B4513" opacity="0.5"/>
+                            <circle cx="55" cy="56" r="5" fill="#8B4513" opacity="0.5"/>
+                            <!-- Door -->
+                            <rect x="65" y="50" width="10" height="20" rx="2" fill="#8B4513" opacity="0.7"/>
+                        </svg>
+                    </div>
+                    <h3 class="tech-title">Infrared Sauna</h3>
+                    <p class="tech-description">
+                        Relax and detoxify in our state-of-the-art infrared sauna. Using advanced infrared technology,
+                        our sauna penetrates deep into muscles and tissues to promote healing, reduce stress, and enhance
+                        overall wellness. The gentle heat provides therapeutic benefits without the intensity of traditional saunas.
+                    </p>
+                    <ul class="tech-features">
+                        <li>Deep tissue heat therapy</li>
+                        <li>Detoxification and cleansing</li>
+                        <li>Improves circulation</li>
+                        <li>Reduces stress and promotes relaxation</li>
+                        <li>Burns calories naturally</li>
+                        <li>Relieves muscle tension and pain</li>
                     </ul>
                 </div>
             </div>

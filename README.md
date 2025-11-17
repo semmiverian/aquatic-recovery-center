@@ -147,7 +147,14 @@ aquatic-recovery-center/
 
 ## 🔧 Setup & Deployment
 
-1. **Local Development**:
+1. **Replace Placeholder Video**:
+   ⚠️ **IMPORTANT**: The current `promotional_video.mp4` is a placeholder file. You need to replace it with your actual promotional video.
+   - Replace `promotional_video.mp4` with your real video file
+   - Recommended format: MP4 (H.264 codec)
+   - Recommended size: Keep under 10MB for optimal loading
+   - Until you upload a real video, a beautiful animated gradient background will display
+
+2. **Local Development**:
    Simply open `index.html` in a web browser, or use a local server:
    ```bash
    # Using Python
@@ -157,8 +164,9 @@ aquatic-recovery-center/
    npx http-server
    ```
 
-2. **Production Deployment**:
+3. **Production Deployment**:
    - Upload all files to your web hosting service
+   - Replace the video file with your actual promotional video
    - Ensure video file is properly configured for streaming
    - Configure CDN for optimal asset delivery (recommended)
 
