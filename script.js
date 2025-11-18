@@ -606,6 +606,170 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 }
 
 // ===================================
+// Testimonial Carousel
+// ===================================
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const prevBtn = document.getElementById('prevTestimonial');
+const nextBtn = document.getElementById('nextTestimonial');
+const indicators = document.querySelectorAll('.indicator');
+let currentTestimonial = 0;
+let autoPlayInterval;
+
+function showTestimonial(index) {
+    // Remove active class from all cards
+    testimonialCards.forEach(card => {
+        card.classList.remove('active', 'prev');
+    });
+
+    // Remove active class from all indicators
+    indicators.forEach(indicator => {
+        indicator.classList.remove('active');
+    });
+
+    // Add active class to current card
+    if (testimonialCards[index]) {
+        testimonialCards[index].classList.add('active');
+    }
+
+    // Add active class to current indicator
+    if (indicators[index]) {
+        indicators[index].classList.add('active');
+    }
+
+    currentTestimonial = index;
+}
+
+function nextTestimonial() {
+    const next = (currentTestimonial + 1) % testimonialCards.length;
+    showTestimonial(next);
+}
+
+function prevTestimonial() {
+    const prev = (currentTestimonial - 1 + testimonialCards.length) % testimonialCards.length;
+    showTestimonial(prev);
+}
+
+// Event listeners for carousel buttons
+if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+        prevTestimonial();
+        resetAutoPlay();
+    });
+}
+
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        nextTestimonial();
+        resetAutoPlay();
+    });
+}
+
+// Event listeners for indicators
+indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+        showTestimonial(index);
+        resetAutoPlay();
+    });
+});
+
+// Auto-play functionality
+function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+        nextTestimonial();
+    }, 5000); // Change testimonial every 5 seconds
+}
+
+function resetAutoPlay() {
+    clearInterval(autoPlayInterval);
+    startAutoPlay();
+}
+
+// Pause auto-play when user hovers over testimonials
+const testimonialsSection = document.querySelector('.testimonials-carousel-wrapper');
+if (testimonialsSection) {
+    testimonialsSection.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+    });
+
+    testimonialsSection.addEventListener('mouseleave', () => {
+        startAutoPlay();
+    });
+}
+
+// Keyboard navigation for carousel
+document.addEventListener('keydown', (e) => {
+    const testimonialsVisible = testimonialsSection &&
+        testimonialsSection.getBoundingClientRect().top < window.innerHeight &&
+        testimonialsSection.getBoundingClientRect().bottom > 0;
+
+    if (testimonialsVisible) {
+        if (e.key === 'ArrowLeft') {
+            prevTestimonial();
+            resetAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            nextTestimonial();
+            resetAutoPlay();
+        }
+    }
+});
+
+// Touch/swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+if (testimonialsSection) {
+    testimonialsSection.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    testimonialsSection.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+}
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            // Swiped left - show next
+            nextTestimonial();
+        } else {
+            // Swiped right - show previous
+            prevTestimonial();
+        }
+        resetAutoPlay();
+    }
+}
+
+// Initialize carousel
+if (testimonialCards.length > 0) {
+    showTestimonial(0);
+    startAutoPlay();
+}
+
+// ===================================
+// Pricing Card Interactions
+// ===================================
+const pricingCards = document.querySelectorAll('.pricing-card');
+
+pricingCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        // Add subtle tilt effect on hover
+        this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+    });
+
+    // Track pricing card clicks
+    card.addEventListener('click', function() {
+        const planName = this.querySelector('.pricing-title').textContent;
+        console.log(`Pricing plan clicked: ${planName}`);
+        // Example: gtag('event', 'pricing_plan_click', { 'plan': planName });
+    });
+});
+
+// ===================================
 // Console Welcome Message
 // ===================================
 console.log('%c🌊 Welcome to Aquatic Recovery Center!', 'color: #0066B3; font-size: 20px; font-weight: bold;');
