@@ -588,6 +588,8 @@ button {
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .pricing-card::before {
@@ -692,6 +694,7 @@ button {
     list-style: none;
     padding: 0;
     margin-bottom: 35px;
+    flex-grow: 1;
 }
 
 .pricing-features li {
